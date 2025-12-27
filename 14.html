@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Merch Store</title>
+
+<style>
+/* ---------- CSS ---------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+section {
+    display: none;
+    padding: 40px;
+    text-align: center;
+}
+
+section.active {
+    display: block;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 150px;
+}
+
+button {
+    background: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Merch Store</h1>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('products')">Products</a>
+        <a onclick="showPage('product')">Product</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME PAGE -->
+<section id="home" class="active">
+    <h2>Welcome to Merch Store</h2>
+    <p>Best quality merchandise at best prices</p>
+    <button onclick="showPage('products')">Shop Now</button>
+</section>
+
+<!-- PRODUCTS PAGE -->
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+        <div class="card">
+<td><img src="tshirt.jpg." height=" 100px" width="300px"></td>
+            <h3>T-Shirt</h3>
+            <p>$20</p>
+            <button onclick="showPage('product')">View</button>
+        </div>
+        <div class="card">
+<td><img src="hoodie.jpg." height=" 100px" width="300px"></td>
+            <h3>Hoodie</h3>
+            <p>$40</p>
+            <button onclick="showPage('product')">View</button>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT DETAILS PAGE -->
+<section id="product">
+    <h2>Classic T-Shirt</h2>
+    <p>High quality cotton t-shirt</p>
+    <p><b>Price:</b> $20</p>
+    <button>Add to Cart</button>
+</section>
+
+<!-- CONTACT PAGE -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Name"><br><br>
+    <input type="email" placeholder="Email"><br><br>
+    <textarea placeholder="Message"></textarea><br><br>
+    <button>Send</button>
+</section>
+
+<footer>
+    <p>© 2025 Merch Store</p>
+</footer>
+
+<script>
+/* ---------- JavaScript ---------- */
+function showPage(pageId) {
+    let pages = document.querySelectorAll("section");
+    pages.forEach(page => page.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
